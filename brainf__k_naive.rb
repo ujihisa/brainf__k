@@ -1,4 +1,4 @@
-module Brainf__kInterpreter
+module Brainf__kNaive
   def self.run(code)
     tape = {}
     dp = 0
@@ -70,6 +70,6 @@ module Brainf__kInterpreter
   end
 end
 
-Brainf__kInterpreter.run('++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.')
+Brainf__kNaive.run('++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.')
 # Hello World!
 # Tested with in ruby 3.0.0dev (2020-10-28T00:47:46Z master 8f9c113f35) [x86_64-linux]
