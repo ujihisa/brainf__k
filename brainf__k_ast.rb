@@ -8,7 +8,7 @@ module Brainf__kAst
 
   def self.parse(code)
     case code[0]
-    when '+', '-', '.', '>', '<'
+    when '+', '-', '.', ',', '>', '<'
       (ast, rest) = parse(code[1..])
       [Node.new(code[0], ast), rest]
     when '['
@@ -17,6 +17,8 @@ module Brainf__kAst
       [Node.new(ast1, ast2), rest2]
     when ']', nil
       [nil, code[1..]]
+    else
+      parse(code[1..])
     end
   end
 
@@ -39,6 +41,8 @@ module Brainf__kAst
     in ['.', cdr]
       putc tape[di]
       execute(cdr, tape, di)
+    in [',', cdr]
+    raise ', is not implemented yet'
     in [car, cdr]
       while tape[di] != 0
         (tape, di) = execute(car, tape, di)

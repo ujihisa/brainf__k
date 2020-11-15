@@ -17,6 +17,8 @@ module Brainf__kNaive
         dp -= 1
       when '.'
         putc tape[dp].chr
+      when ','
+        raise ', is not implemented yet'
       when '['
         if tape[dp] == 0
           ip = next_matching_close(code, ip)
@@ -26,7 +28,7 @@ module Brainf__kNaive
           ip = prev_matching_open(code, ip)
         end
       else
-        raise "#{code[ip]} is not implemented yet"
+        # comment
       end
 
       ip += 1
