@@ -1,4 +1,4 @@
-module Brainf__kVm
+module Brainf__kAst
   Node = Struct.new(:car, :cdr) do
     def initialize(*)
       super
@@ -52,8 +52,8 @@ module Brainf__kVm
   end
 end
 
-case Brainf__kVm.parse('++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.')
+case Brainf__kAst.parse('++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.')
 in [ast, nil]
-  Brainf__kVm.execute(ast)
+  Brainf__kAst.execute(ast)
 end
 # Tested with ruby 3.0.0dev (2020-10-28T00:47:46Z master 8f9c113f35) [x86_64-linux]
